@@ -3,9 +3,10 @@ project('bootdev-sneklang', 'c',
         default_options : ['warning_level=3', 'c_std=c99'])
 
 subdir('snekstack')
+subdir('snekobject')
 
-sources = [files('main.c')] + snekstack_sources
-includes = [snekstack_inc]
+sources = [files('main.c')] + snekstack_sources + snekobject_sources
+includes = [snekstack_inc, snekobject_inc]
 
 bootdev_sneklang = executable(
         'bootdev_sneklang',
